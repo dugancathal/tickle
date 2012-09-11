@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{tickle}
-  s.version = "0.1.7"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Joshua Lippiner"]
-  s.date = %q{2010-05-10}
+  s.authors = ["Joshua Lippiner", "TJ Taylor"]
+  s.date = %q{2012-09-11}
   s.description = %q{Tickle is a date/time helper gem to help parse natural language into a recurring pattern.  Tickle is designed to be a compliment of Chronic and can interpret things such as "every 2 days, every Sunday, Sundays, Weekly, etc.}
-  s.email = %q{jlippiner@noctivity.com}
+  s.email = %q{dugancathal@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
