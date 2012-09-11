@@ -16,6 +16,7 @@ require 'chronic'
 require 'tickle/tickle'
 require 'tickle/handler'
 require 'tickle/repeater'
+require 'numerizer/numerizer'
 
 module Tickle #:nodoc:
   VERSION = "0.1.7"
@@ -55,7 +56,9 @@ class Date #:nodoc:
       diff = (amount > self.wday) ? (amount - self.wday) : (7 - (self.wday - amount))
       Date.civil(self.year, self.month, self.day + diff)
     when :week then
-      Date.civil(self.year, self.month, self.day + (7*amount))
+      newdate = self + (7 * amount)
+      #Date.civil(self.year, self.month, self.day + (7*amount))
+      Date.civil(newdate.year, newdate.month, newdate.day)
     when :month then
       Date.civil(self.year, self.month+amount, self.day)
     when :year then

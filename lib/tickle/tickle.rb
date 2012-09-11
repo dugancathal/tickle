@@ -254,8 +254,6 @@ module Tickle  #:nodoc:
       @tokens.map(&:type)
     end
 
-    protected
-
     # Returns the next available month based on the current day of the month.
     # For example, if get_next_month(15) is called and the start date is the 10th, then it will return the 15th of this month.
     # However, if get_next_month(15) is called and the start date is the 18th, it will return the 15th of next month.
@@ -264,6 +262,7 @@ module Tickle  #:nodoc:
     end
 
     def next_appropriate_year(month, day)
+      @start ||= Date.today
       year = (Date.new(@start.year.to_i, month.to_i, day.to_i) == @start.to_date) ? @start.year + 1 : @start.year
       return year
     end

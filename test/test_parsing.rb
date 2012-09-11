@@ -207,6 +207,7 @@ class TestParsing < Test::Unit::TestCase
 
   def assert_tickle_match(expected_next, expected_start, expected_until, expected_expression, date_expression, options={})
     result = parse_now(date_expression, options)
+    puts result.inspect
     actual_next = result[:next].to_date
     actual_start = result[:starting].to_date
     actual_until = result[:until].to_date rescue nil
